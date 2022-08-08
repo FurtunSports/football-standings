@@ -1,11 +1,10 @@
-const teams = fetchTeams();
-console.log(teams);
+// fetch teams and bind the sort function to sort the team with the highest scored points higher
+const teams = fetchTeams().sort((a, b) => calculatePoints(b.matchesPlayed) - calculatePoints(a.matchesPlayed));
 
 (function() {
   // DOM has been loaded
   for(let i = 0; i < 7; i++) {
     buildTeamElements(teams[i], i + 1);
-    console.log('building the ' + (i + 1) + 'th team');
   }
 })();
 
