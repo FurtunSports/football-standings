@@ -6,7 +6,9 @@ const teams = fetchTeams().sort((a, b) => calculatePoints(b.matchesPlayed) - cal
   for(let i = 0; i < 7; i++) {
     buildTeamElements(teams[i], i + 1);
   }
-  highlightEuropeanLeagueTeams();
+  setTimeout(() => {
+    highlightEuropeanLeagueTeams();
+  }, 200);
 })();
 
 function buildTeamElements(team, rank) {
