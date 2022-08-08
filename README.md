@@ -23,6 +23,14 @@ CSS topiscs covered:
 2. changing default values
 3. flexbox
 4. border, padding, margin
+5. link Google Web Fonts (free)
+
+## Features:
+```
+1. List teams
+2. Show teams from array
+3. Team ranking
+```
 
 ## Note: 
 ```
