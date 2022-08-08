@@ -25,17 +25,32 @@ h1 {
 .team-wrapper {
   max-width: 900px;
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  width: 50px;
+  width: 40px;
   height: auto;
 }
 
+.standings-header {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+}
+
+.standings-header .team-name {
+  width: 235px;
+}
 .team-name {
-  width: 200px;
+  width: 194px;
   text-align: left;
+  padding-left: 10px;
+}
+
+.matches-played {
+  width: 50px;
+  text-align: center;
 }
