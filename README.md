@@ -19,7 +19,7 @@ HTML topics covered:
 
 CSS topiscs covered:
 
-1. * wildcard
+1. `*` wildcard
 2. changing default values
 3. flexbox
 4. border, padding, margin
