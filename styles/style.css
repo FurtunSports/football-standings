@@ -54,3 +54,13 @@ h1 {
   width: 50px;
   text-align: center;
 }
+
+.champions-league {
+  background-color: rgb(106, 106, 255);
+  padding: 15px;
+}
+
+.europa-league {
+  padding: 15px;
+  background-color: rgb(248, 200, 143);
+}

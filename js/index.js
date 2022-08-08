@@ -6,6 +6,7 @@ const teams = fetchTeams().sort((a, b) => calculatePoints(b.matchesPlayed) - cal
   for(let i = 0; i < 7; i++) {
     buildTeamElements(teams[i], i + 1);
   }
+  highlightEuropeanLeagueTeams();
 })();
 
 function buildTeamElements(team, rank) {
@@ -205,4 +206,18 @@ function fetchTeams() {
       }
     }
   ];
+}
+
+function highlightEuropeanLeagueTeams() {
+  const allWrappers = document.getElementsByClassName('team-wrapper');
+
+  for (let i = 0; i < allWrappers.length; i++) {
+    if (i < 4) {
+      allWrappers[i].getElementsByClassName('matches-played')[0].className += ' champions-league';
+    }
+
+    if (i < 6 && i > 3) {
+      allWrappers[i].getElementsByClassName('matches-played')[0].className += ' europa-league';
+    }
+  }
 }
