@@ -1,9 +1,9 @@
-// fetch teams and bind the sort function to sort the team with the highest scored points higher
-const teams = fetchTeams().sort((a, b) => calculatePoints(b.matchesPlayed) - calculatePoints(a.matchesPlayed));
-
-(function() {
+(async function() {
   // DOM has been loaded
-  for(let i = 0; i < 7; i++) {
+  // fetch teams and bind the sort function to sort the team with the highest scored points higher
+  let teams = (await fetchTeams()).sort((a, b) => calculatePoints(b.matchesPlayed) - calculatePoints(a.matchesPlayed));
+
+  for(let i = 0; i < teams.length; i++) {
     buildTeamElements(teams[i], i + 1);
   }
   setTimeout(() => {
@@ -100,114 +100,11 @@ function calculateGoalDifference(goals) {
   return goals.scored - goals.conceded;
 }
 
-function fetchTeams() {
-  return [
-    {
-      name: 'Arsenal',
-      country: 'England',
-      logo: 'assets/arsenal-logo.png',
-      city: 'London',
-      matchesPlayed: {
-        wins: 32,
-        draws: 4,
-        losses: 2
-      },
-      goals: {
-        scored: 82,
-        conceded: 26
-      }
-    },
-    {
-      name: 'Manchester City',
-      country: 'England',
-      logo: 'assets/manchester-city.png',
-      city: 'Manchester',
-      matchesPlayed: {
-        wins: 29,
-        draws: 5,
-        losses: 4
-      },
-      goals: {
-        scored: 70,
-        conceded: 24
-      }
-    },
-    {
-      name: 'Liverpool',
-      country: 'England',
-      logo: 'assets/liverpool.png',
-      city: 'Liverpool',
-      matchesPlayed: {
-        wins: 28,
-        draws: 5,
-        losses: 5
-      },
-      goals: {
-        scored: 59,
-        conceded: 18
-      }
-    },
-    {
-      name: 'Manchester United',
-      country: 'England',
-      logo: 'assets/manchester-united.png',
-      city: 'Manchester',
-      matchesPlayed: {
-        wins: 21,
-        draws: 7,
-        losses: 10
-      },
-      goals: {
-        scored: 68,
-        conceded: 37
-      }
-    },
-    {
-      name: 'Chelsea',
-      country: 'England',
-      logo: 'assets/chealsea.png',
-      city: 'London',
-      matchesPlayed: {
-        wins: 21,
-        draws: 6,
-        losses: 11
-      },
-      goals: {
-        scored: 49,
-        conceded: 33
-      }
-    },
-    {
-      name: 'Tottenham',
-      country: 'England',
-      logo: 'assets/tottenham.png',
-      city: 'London',
-      matchesPlayed: {
-        wins: 19,
-        draws: 9,
-        losses: 10
-      },
-      goals: {
-        scored: 82,
-        conceded: 26
-      }
-    },
-    {
-      name: 'Wolverhamton',
-      country: 'England',
-      logo: 'assets/wolverhampton.png',
-      city: 'Wolverhampton',
-      matchesPlayed: {
-        wins: 22,
-        draws: 2,
-        losses: 14
-      },
-      goals: {
-        scored: 56,
-        conceded: 39
-      }
-    }
-  ];
+async function fetchTeams() {
+  return await fetch('/js/premier-league-standings.json')
+          .then(response => response.json())
+          .then(data => data)
+          .catch(err => console.error(err));
 }
 
 function highlightEuropeanLeagueTeams() {
