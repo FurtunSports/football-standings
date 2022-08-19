@@ -43,6 +43,7 @@ h1 {
 
 .standings-header .team-name {
   width: 235px;
+  padding-top: 15px;
 }
 .team-name {
   width: 194px;
