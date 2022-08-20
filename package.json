@@ -1,0 +1,22 @@
+{
+  "name": "football-standings",
+  "version": "1.0.0",
+  "description": "A simple project built during the intent to teach a class Basics of javascript programming.  Covered topics:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FurtunSports/football-standings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FurtunSports/football-standings/issues"
+  },
+  "homepage": "https://github.com/FurtunSports/football-standings#readme",
+  "dependencies": {
+    "@chronos/b7-frosted-glass": "^0.0.9"
+  }
+}

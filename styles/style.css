@@ -11,7 +11,7 @@ body {
   justify-content: center;
 }
 
-h1 {
+#menu {
   width: 100%;
   text-align: center;
   background: #451F55;
@@ -20,6 +20,8 @@ h1 {
   font-family: "Alumni Sans Inline One";
   font-weight: 400;
   font-size: 48px;
+  position: fixed;
+  top: 0; left: 0;
 }
 
 .team-wrapper {
